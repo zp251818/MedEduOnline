@@ -7,6 +7,15 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: 3000,
+    cors: true,
+    proxy: {
+      "/cors": {
+        target: "http://localhost:8600/",
+        changeOrigin: true,
+        ws: true,
+        rewrite: (path) => path.replace(/^\/cors/, ""),
+      },
+    },
   },
   plugins: [react()],
   resolve: {

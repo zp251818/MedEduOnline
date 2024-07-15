@@ -1,0 +1,26 @@
+.demo-logo{
+    width: 200px;
+    height: 60px;
+    background: url(https://img1.baidu.com/it/u=161476318,2984096451&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500) no-repeat center / 160px auto;
+}
+
+.demo-title{
+    margin-left: 10px;
+    color: white;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.ant-menu-horizontal {
+    padding-left: 40%;
+    display: flex;
+  }
+  
+.ant-menu-horizontal .ant-menu-item {
+    margin: 0 15px; 
+    font-size: 16px;
+}
+
+.ant-layout-footer{
+    padding-top: 0
+}

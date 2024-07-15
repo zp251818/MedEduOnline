@@ -1,0 +1,42 @@
+.container-userInformation {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .model {
+        position:absolute;
+    }
+}
+
+
+
+.ant-table-thead th {
+    font-size:16px; /* 适当调整字体大小 */
+  }
+  
+  /* 增大表格内容的字体大小 */
+  .ant-table-tbody td {
+    font-size: 18px; /* 适当调整字体大小 */
+  }
+
+.operate{
+    width: 100%;
+    margin-top: 16px;
+    text-align: right;
+    padding-right: 10%;
+    margin-bottom: 12px;
+}
+
+.operate-button {
+    margin-left: 26px; 
+  }
+
+.user-table{
+    margin-left: 2.5%;
+}
+
+
+.modal-button{
+    margin-top: 6px;
+    margin-left: 25%; 
+}

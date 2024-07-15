@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    height: 100%; /* 父容器给定的高度 */
+  }
+  
+  .column {
+    flex: 1 1 30%;
+    margin: 0 10px; /* 留出列与列之间的空隙 */
+    height: 100%;
+  }
+  
+  .sub-container {
+    border: 1px solid #ccc; /* 示例：添加边框以显示每个区域 */
+    padding: 10px;
+    margin-bottom: 10px; /* 留出区域之间的空隙 */
+    width: 100%; /* 确保子容器宽度撑满父容器的列 */
+    height: 44%;
+    box-sizing: border-box;
+  }
