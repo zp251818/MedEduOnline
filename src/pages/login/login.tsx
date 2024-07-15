@@ -4,7 +4,7 @@ import './login.css'
 import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getLanguage } from '@/utils/language';
-import { loginByAccountAdmin, registerByAdmin } from '@/apis/queryfn/admin';
+import { loginByAccountAdmin } from '@/apis/queryfn/admin';
 import { message } from 'antd';
 import { ERROR } from '@/static/const';
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { Menu } from 'antd';
 import {
@@ -6,7 +6,6 @@ import {
   BookOutlined,
   DatabaseOutlined,
   ReadOutlined,
-  ProfileOutlined,
   FacebookOutlined,
   AreaChartOutlined,
   PieChartOutlined,
@@ -14,12 +13,11 @@ import {
   DesktopOutlined,
   TeamOutlined,
   EditOutlined,
-  FileUnknownOutlined,
   OrderedListOutlined
 } from '@ant-design/icons';
 import { Outlet, useNavigate} from "react-router-dom";
 import './content.scss'
-import { Analysis_Label, Running_Information_Label, Process_Monitoring_Label, Achievement_Monitoring_Label, PlatForm_Label, User_Information_Label, Course_Manage_Label, Course_Category_Label, Course_Student_Label, Question_Resources_Label, Question_Statistic_Label, Question_Manage_Label } from '@/static/const';
+import { Analysis_Label, Running_Information_Label, Process_Monitoring_Label, Achievement_Monitoring_Label, PlatForm_Label, User_Information_Label, Course_Manage_Label, Course_Category_Label, Course_Student_Label, Question_Resources_Label, Question_Statistic_Label } from '@/static/const';
 
 const { SubMenu } = Menu;
 

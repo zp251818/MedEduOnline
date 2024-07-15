@@ -2,7 +2,7 @@
 import './course_student.scss'
 import { useState , useEffect} from 'react';
 import type { SearchProps } from 'antd/es/input/Search';
-import { Input ,List, Avatar,Progress ,Table, Popconfirm, Button, message, Steps } from 'antd';
+import { Input ,List, Avatar,Table, Popconfirm, Button, message, Steps } from 'antd';
 import { ACCOUNT, CONFIRM_DELETE_STUDENT, COURSE_PROCESS, COURSE_STUDENT_MANAGE, COVER,  COVER_DEMO,  DELETE, ERROR, SUCCESS, USERNAME } from '@/static/const';
 import { SortOrder } from 'antd/es/table/interface';
 import { findStatus, findStatusType } from '@/utils/someTips';
