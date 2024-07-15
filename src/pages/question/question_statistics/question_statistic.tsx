@@ -2,7 +2,7 @@
 import './question_statistics.scss'
 import { useState , useEffect, useRef} from 'react';
 import type { SearchProps } from 'antd/es/input/Search';
-import { Input ,List ,Table, Popconfirm, Button, message, Tag } from 'antd';
+import { Input ,List ,Table, Popconfirm, Button, message, Tag ,InputRef} from 'antd';
 import { COLOR_TAG, CONFIRM_DELETE_QUESTION, DELETE, EXAM_QUESTION_ID, EXAM_QUESTION_TYPE, QUESTION_BANK, QUESTION_CONTENT_PART, QUESTION_TYPES, SUCCESS } from '@/static/const';
 
 import {SearchOutlined} from '@ant-design/icons'
@@ -13,9 +13,9 @@ import { deleteBatchExamQuestions, getExamQuestionsByQuestionBankId } from '@/ap
 const QuestionStatistics: React.FC = () =>{
     const { Search } = Input;
     
-      const [searchText, setSearchText] = useState('');
-      const [searchedColumn, setSearchedColumn] = useState('');
-      const searchInputRef = useRef<Input>(null);
+      const [, setSearchText] = useState('');
+      const [, setSearchedColumn] = useState('');
+      const searchInputRef = useRef<InputRef>(null);
   
       const getColumnSearchProps = (dataIndex: string) => ({
           filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }: any) => (

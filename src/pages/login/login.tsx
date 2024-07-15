@@ -71,7 +71,7 @@ interface CircleProps {
         <div className="color"></div>
         <div className="box">
           {/* 背景圆 */}
-          {circles.map((circle, index) => (
+          {circles.map((_circle, index) => (
             <div className="circle" key={index}></div>
           ))}
           {/* 登录框 */}

@@ -1,5 +1,5 @@
 import './user_information.scss'
-import { Table, Input,Space, Button, Popconfirm ,Select , Form ,Modal, message ,Upload, Tag} from 'antd';
+import { Table, Input,Space, Button, Popconfirm ,Select , Form ,Modal, message ,Upload, Tag ,InputRef} from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import {SearchOutlined, UploadOutlined} from '@ant-design/icons'
 import { ACCOUNT, AUTHORITY, BATCH_IMPORT, CANCEL, CLINICAL_MEDICINE, COLOR_TAG, CONFIRM_DELETE, COVER, DELETE, DIAGNOSTIC_IMAGING, ECG, EMAIL, ENTER_ACCOUNT, ENTER_AUTHORITY, ENTER_EMAIL, ENTER_MAJOR, ENTER_PHONE, ENTER_TYPE, ENTER_USER_INFORMATION, ENTER_USERNAME, ERROR, ERROR_EMAIL, ERROR_PHONE, EXAMINER, FILL_ALL, IMPORT_USER, MAJOR, MEDICAL_SPECIALTIES, MEDICAL_TECH, NO_AUTHORITY, NURSING, OPERATE, PHONE, PUBLIC_HEALTH, RESET, STUDENT, SUBMIT, SUCCESS, TEACHER, TYPE, ULTRASOUND, USERNAME, XLS_FILE_ERROR } from '@/static/const';
@@ -11,9 +11,10 @@ import { deleteUserAuthority, putUserAuthority } from '@/apis/queryfn/userLinkCa
 const { Option } = Select;
 const UserInformation: React.FC = () =>{
 
-    const [searchText, setSearchText] = useState('');
-    const [searchedColumn, setSearchedColumn] = useState('');
-    const searchInputRef = useRef<Input>(null);
+    const [, setSearchText] = useState('');
+    const [, setSearchedColumn] = useState('');
+
+    const searchInputRef = useRef<InputRef>(null);
 
     const getColumnSearchProps = (dataIndex: string) => ({
         filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }: any) => (
@@ -109,7 +110,7 @@ const UserInformation: React.FC = () =>{
           dataIndex:'category_id',
           key:'category_id',
           render:(category_id:string,record:User) => (record.is_teacher=="0"?<Tag color={parseInt(category_id) >= 1 && parseInt(category_id) <= 10 ? COLOR_TAG[parseInt(category_id) - 1].color : 'geekblue'}>
-          {parseInt(category_id) >= 1 && parseInt(category_id) <= 10 ? MEDICAL_SPECIALTIES[parseInt(category_id)].name :`Tag ${category_id}` } 
+          {parseInt(category_id) >= 1 && parseInt(category_id) <= 10 ? MEDICAL_SPECIALTIES[parseInt(category_id)-1].name :`Tag ${category_id}` } 
         </Tag>:""),
           wdith:"10%"
         },

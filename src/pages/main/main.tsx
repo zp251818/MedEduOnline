@@ -33,8 +33,8 @@ const Main: React.FC = () => {
 
   const navigate = useNavigate();
   useEffect(()=>{
-    const adminInformation:Admin = loadAdminInfoFromLocalStorage();
-    if (adminInformation.admin_id === -1) {
+    const adminInformation = loadAdminInfoFromLocalStorage();
+    if (!adminInformation) {
       message.error("未登录或登录失效！");
       setTimeout(() => {
         navigate("/login");

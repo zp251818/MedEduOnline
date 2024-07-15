@@ -1,5 +1,5 @@
 import './course_category.scss'
-import { Table, Input,Button, Select , message ,Tag} from 'antd';
+import { Table, Input,Button, Select , message ,Tag,InputRef} from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import {SearchOutlined} from '@ant-design/icons'
 import { COLOR_TAG, COMPULSORY, ELECTIVE, END_TIME, ERROR, LESSON_CATEGORY, LESSON_COVER, LESSON_NAME, LESSON_TYPE, MEDICAL_SPECIALTIES, START_TIME, SUCCESS } from '@/static/const';
@@ -9,9 +9,9 @@ const { Option } = Select;
 
 const CourseCategory: React.FC = () =>{
 
-    const [searchText, setSearchText] = useState('');
-    const [searchedColumn, setSearchedColumn] = useState('');
-    const searchInputRef = useRef<Input>(null);
+   const searchInputRef = useRef<InputRef>(null);
+    const [, setSearchText] = useState('');
+    const [, setSearchedColumn] = useState('');
 
     const [courseListData,setCourseListData] = useState<lesson_information[]>();
 
