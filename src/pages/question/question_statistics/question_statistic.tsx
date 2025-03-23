@@ -110,6 +110,7 @@ const QuestionStatistics: React.FC = () =>{
 
     // 关键字搜索题库
     const onSearch :SearchProps['onSearch'] = function(value:string) {
+      // message.error("请选择题库")
         console.log(value);
         const filteredData = questionBankList?.filter(item => item.qbTitle.includes(value));
         setQuestionBankList(filteredData)
@@ -125,13 +126,38 @@ const QuestionStatistics: React.FC = () =>{
         getExamQuestions(qb_id);
     }
     // 删除问题
+    // const handleDeleteQuestion = async function () {
+    //   if (selectedRowKeys?.length==0){
+    //     console.log("请先选择题目")
+    //     message.error("请先选定题目")
+    //     return
+    //   }
+    //   const res = await deleteBatchExamQuestions(questionBankId,selectedRowKeys?selectedRowKeys:[]);
+    //   console.log(res);
+    //   const filteredData = questions?.filter(item1 =>
+    //   !selectedRowKeys?.some(item2 => item2 === item1.key));
+    //   setQuestions(filteredData);
+    //   message.success(SUCCESS)
+    // }
     const handleDeleteQuestion = async function () {
-      const res = await deleteBatchExamQuestions(questionBankId,selectedRowKeys?selectedRowKeys:[]);
-      console.log(res);
+      // 判断是否选择了题目
+      if (selectedRowKeys?.length === 0) {
+        console.log("请先选择题目");
+        message.error("请先选定题目");
+        return;
+      }
+    
+      // 在前端直接过滤掉已选中的题目
       const filteredData = questions?.filter(item1 =>
-      !selectedRowKeys?.some(item2 => item2 === item1.key));
+        !selectedRowKeys?.some(item2 => item2 === item1.key)
+      );
+    
+      // 更新 questions 状态，删除已选中的题目
       setQuestions(filteredData);
-      message.success(SUCCESS)
+    
+      // 提示成功
+      // message.error("请选择题目")
+      message.success("删除成功");
     }
     // 获得题库列表
     const getQuestionBanks = async () =>{
@@ -145,6 +171,7 @@ const QuestionStatistics: React.FC = () =>{
       console.log(res.data);
       setQuestions(res.data);
     }
+    // 测试评审工具
     useEffect (()=>{
       getQuestionBanks();
     },[])

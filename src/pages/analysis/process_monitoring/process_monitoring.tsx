@@ -58,7 +58,7 @@ const ProcessMonitoring: React.FC = () =>{
                     onChange: page => {
                        console.log(page)
                     },
-                    pageSize:15,
+                    pageSize:8,
                     className: 'pagination-center' 
                 }}
                 dataSource={list_data}
