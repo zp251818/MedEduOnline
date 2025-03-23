@@ -126,7 +126,7 @@ const CourseStudent: React.FC = () =>{
                     onChange: page => {
                        console.log(page)
                     },
-                    pageSize:15,
+                    pageSize:8,
                     // total:15,
                     className: 'pagination-center' 
                 }}
